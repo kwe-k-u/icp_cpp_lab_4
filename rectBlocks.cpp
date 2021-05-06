@@ -1,26 +1,32 @@
 #include "rectBlocks.h"
 
-int RectBlocks::getHeight() {
+
+
+
+int rectBlocks::getHeight() {
 	return h;
 }
 
 
-int RectBlocks::getLenght() {
+int rectBlocks::getLength() {
 	return l;
 }
 
 
-int RectBlocks::getWidth() {
+int rectBlocks::getWidth() {
 	return w;
 }
 
 
 
-RectBlocks::RectBlocks() {
+rectBlocks::rectBlocks() {
+	h = 0;
+	w = 0;
+	l = 0;
 
 }
 
-RectBlocks::RectBlocks(int height, int width, int length) {
+rectBlocks::rectBlocks(int height, int width, int length) {
 	this->h = height;
 	l = length;
 	w = width;

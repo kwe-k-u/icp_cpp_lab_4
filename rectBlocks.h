@@ -1,18 +1,26 @@
 #pragma once
-class RectBlocks
-{
+
+#ifndef RECTBLOCKS_H
+#define RECTBLOCKS_H
+
+
+
+class rectBlocks {
 private:
-	int h; //height
-	int w; //width
-	int l; //lenght
+	int h = 0; //height
+	int w = 0; //width
+	int l = 0; //lenght
 
 
 public:
 	int getHeight();
 	int getWidth();
-	int getLenght();
+	int getLength();
 
-	RectBlocks();
-	RectBlocks(int height, int width, int length);
+	rectBlocks();
+	rectBlocks(int height, int width, int length);
+
 };
 
+
+#endif 

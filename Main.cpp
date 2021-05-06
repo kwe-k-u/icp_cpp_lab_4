@@ -3,17 +3,69 @@
 
 #include <iostream>
 #include <fstream>
-using namespace std;
+#include <string>
+#include "rectBlocks.h"
+#include "sqrBaseRectBlocks.h"
+#include "cuboidBlocks.h"
 
+using namespace std;
 
 
 int main()
 {
-    cout << "Hello World!\n";
+	int objectCount = 0;
+	rectBlocks rectArray[20] = {};
+	sqrBaseRectBlocks sqrArray[20] = {};
+	cuboidBlocks cuboidArray[20] = {};
+	
+
+
+	{//memory scope for reading file
+		ifstream BlocksFile("dataBlocks.dat");
+		string line;
+
+		while (getline(BlocksFile, line)) {
+
+			int firstSpace = line.find_first_of(" "); // index of first delimiter
+			int lastSpace = line.find_last_of(" "); // index of second delimiter
+			string last = line.substr(firstSpace + 1);
+			int h = 0; //height
+			int w = 0; //width
+			int l = 0; //length
+
+
+			//getting first number
+			w = stoi(line.substr(0, firstSpace));
+
+			//getting last number
+			h = stoi(line.substr(lastSpace + 1));
+
+			//middle number
+			l = stoi(last.substr(0, last.find(" ")));
+
+			rectArray[objectCount] = rectBlocks(h, w, l);
+
+			//seeking rectBlocks that are squares
+			if (h == w) {
+				sqrArray[objectCount] = sqrBaseRectBlocks(h, w, l);
+			}
+
+
+			//seeking cuboidBlocks that are squares
+			if (h == w && w ==l) {
+				cuboidArray[objectCount] = cuboidBlocks(h, w, l);
+			}
+
+
+			
+			objectCount++;
+		}
+
+	}
+			
+		
+
+
+
 }
 
-
-//reads the contents of a file
-void readFile(string path) {
-
-}
