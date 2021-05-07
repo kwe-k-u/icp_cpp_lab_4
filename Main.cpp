@@ -7,7 +7,7 @@
 #include "rectBlocks.h"
 #include "sqrBaseRectBlocks.h"
 #include "cuboidBlocks.h"
-
+#include "cylindricalBlocks.h"
 using namespace std;
 
 
@@ -17,7 +17,8 @@ int main()
 	rectBlocks rectArray[20] = {};
 	sqrBaseRectBlocks sqrArray[20] = {};
 	cuboidBlocks cuboidArray[20] = {};
-	
+	cylindricalBlocks cylindricalArray[20] = {};
+	// sphericalBlocks sphericalArray[20] = {};
 
 
 	{//memory scope for reading file
@@ -56,7 +57,11 @@ int main()
 				cuboidArray[objectCount] = cuboidBlocks(h, w, l);
 			}
 
-
+			//seeking cylindericalBlocks
+			if (h == w && w ==l) {
+				cylindericalArray[objectCount] = cylindricalBlocks(l,w);
+			}
+			
 			
 			objectCount++;
 		}
