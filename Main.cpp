@@ -91,7 +91,7 @@ int main()
 	for (int outer = 0; outer < arraySize; outer++) {
 
 		for (int inner = 0; inner < arraySize; inner++) {
-			if (cylindricalArray[outer].getWidth() < cylindricalArray[inner].getWidth()) {
+			if (cylindricalArray[outer].getSurfaceArea() < cylindricalArray[inner].getSurfaceArea()) {
 				cylindricalBlocks te = cylindricalArray[outer];
 				cylindricalArray[outer] = cylindricalArray[inner];
 				cylindricalArray[inner] = te;
@@ -103,13 +103,16 @@ int main()
 	cout << endl << endl << "Spheres" << endl;
 	for (sphericalBlocks s : sphericalArray) {
 
-		cout << "test" << endl;
+		cout << "diameter: " << s.getHeight() << " SurfaceArea: "
+			<< s.getSurfaceArea() << "  Volume: " << s.getVolume() << endl;
 	}
 
 	cout << endl << endl << "Cylinders" << endl;
-	for (sphericalBlocks s : sphericalArray) {
+	for (cylindricalBlocks c : cylindricalArray) {
 
-		cout << "test" << endl;
+		//diameter of the circular base, the length of the object and the area.
+		cout << "Diameter: " << c.getWidth() << " Length: " << c.getLength()
+			<< "Surface Area: " << c.getSurfaceArea() << endl;
 	}
 	
 	

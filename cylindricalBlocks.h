@@ -8,6 +8,10 @@ class cylindricalBlocks: public sqrBaseRectBlocks{
 public:
 	cylindricalBlocks();
 	cylindricalBlocks(int le, int h);
+	double getSurfaceArea();
+
+private:
+	double PI = 3.142;
 };
 
 
