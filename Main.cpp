@@ -54,23 +54,46 @@ int main()
 
 
 			//seeking cuboidBlocks that are squares and making cylinders from them
-			if (h == w && w ==l) {
+			if (h == w && w == l) {
 				cuboidArray[objectCount] = cuboidBlocks(h, w, l);
 				cylindricalArray[objectCount] = cylindricalBlocks(l, w);
 				sphericalArray[objectCount] = sphericalBlocks(w);
 			}
 
-		
-			
-			
+
+
+
 			objectCount++;
 		}
 
 	}
-			
-		
 
+
+	//sorting spheres according to diameters
+	
+	int arraySize = sizeof(sphericalArray) / sizeof(sphericalArray[0]); //determining number of spheres
+		
+	for (int outer = 0; outer < arraySize; outer++) {
+		
+			for (int inner = 0; inner < arraySize; inner++) {
+				if (sphericalArray[outer].getWidth() > sphericalArray[inner].getWidth()) {
+					sphericalBlocks temp = sphericalArray[outer];
+					sphericalArray[outer] = sphericalArray[inner];
+					sphericalArray[inner] = temp;
+				}
+			}
+
+	}
+
+	for( sphericalBlocks s : sphericalArray)
+	{
+		cout << s.getWidth()<< endl;
+	}
+	
 
 
 }
+
+
+
 
