@@ -1,7 +1,6 @@
 #include "sphericalBlocks.h"
 #include "cuboidBlocks.h"
 
-
 sphericalBlocks::sphericalBlocks()
 	: cuboidBlocks{} {}
 
@@ -19,3 +18,5 @@ double sphericalBlocks::getSurfaceArea() {
 double sphericalBlocks::getVolume() {
 	return (4 * PI * getWidth() * getWidth() * getWidth())/3;
 }
+
+

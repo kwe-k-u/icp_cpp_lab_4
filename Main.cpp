@@ -70,27 +70,50 @@ int main()
 
 
 	//sorting spheres according to diameters
-	
 	int arraySize = sizeof(sphericalArray) / sizeof(sphericalArray[0]); //determining number of spheres
 		
 	for (int outer = 0; outer < arraySize; outer++) {
 		
 			for (int inner = 0; inner < arraySize; inner++) {
-				if (sphericalArray[outer].getWidth() > sphericalArray[inner].getWidth()) {
+				if (sphericalArray[outer].getWidth() < sphericalArray[inner].getWidth()) {
 					sphericalBlocks temp = sphericalArray[outer];
 					sphericalArray[outer] = sphericalArray[inner];
 					sphericalArray[inner] = temp;
 				}
 			}
+	}
+
+
+
+	//sorting cylinders according to diameters
+	arraySize = sizeof(cylindricalArray) / sizeof(cylindricalArray[0]); //determining number of spheres
+
+	for (int outer = 0; outer < arraySize; outer++) {
+
+		for (int inner = 0; inner < arraySize; inner++) {
+			if (cylindricalArray[outer].getWidth() < cylindricalArray[inner].getWidth()) {
+				cylindricalBlocks te = cylindricalArray[outer];
+				cylindricalArray[outer] = cylindricalArray[inner];
+				cylindricalArray[inner] = te;
+			}
+		}
 
 	}
 
-	for( sphericalBlocks s : sphericalArray)
-	{
-		cout << s.getWidth()<< endl;
+	cout << endl << endl << "Spheres" << endl;
+	for (sphericalBlocks s : sphericalArray) {
+
+		cout << "test" << endl;
+	}
+
+	cout << endl << endl << "Cylinders" << endl;
+	for (sphericalBlocks s : sphericalArray) {
+
+		cout << "test" << endl;
 	}
 	
-
+	
+	
 
 }
 
