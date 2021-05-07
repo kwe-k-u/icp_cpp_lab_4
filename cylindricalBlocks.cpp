@@ -1,13 +1,11 @@
-#include<iostream>
-#include "sqrBaseRectBlocks.h"
 #include "cylindricalBlocks.h"
-using namespace std;
+#include "sqrBaseRectBlocks.h"
+
 
 cylindricalBlocks::cylindricalBlocks()
 	: sqrBaseRectBlocks{} {}
 
 
-cylindricalBlocks::cylindricalBlocks(int height,int diameter)
-	: sqrBaseRectBlocks{ height, diameter } {}
-
+cylindricalBlocks::cylindricalBlocks(int diameter, int h)
+	: sqrBaseRectBlocks{ diameter, diameter, h} {}
 

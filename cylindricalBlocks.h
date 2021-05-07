@@ -2,12 +2,13 @@
 #ifndef CYLINDRICALBLOCKS_H
 #define CYLINDRICALBLOCKS_H
 
-class cylindricalBlocks : public sqrBaseRectBlocks{
+#include "sqrBaseRectBlocks.h"
+
+class cylindricalBlocks: public sqrBaseRectBlocks{
 public:
 	cylindricalBlocks();
-	cylindricalBlocks(int height, int diameter);
+	cylindricalBlocks(int le, int h);
 };
 
 
-#endif
-
+#endif // !CYLINDRICALBLOCKS_H
